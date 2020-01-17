@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:versionCode="1" android:versionName="1.0" package="com.vanlookmanu" android:installLocation="auto">
+	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="27" />
+	<application android:icon="@drawable/myicon" android:label="imagine a new color"></application>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	<uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+	<uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+	<uses-permission android:name="android.permission.CONTROL_LOCATION_UPDATES" />
+	<uses-permission android:name="android.permission.INSTALL_LOCATION_PROVIDER" />
+	<uses-permission android:name="android.permission.LOCATION_HARDWARE" />
+</manifest>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundColor="{DynamicResource PageBackgroundColor}"
+             Title="{Binding Name}"
+             x:Class="B4.PE3.VanLookManu.Pages.LocationPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Save" Priority="1" Order="Primary"
+                     Command="{Binding SaveLocationCommand}"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content >
+        <StackLayout Padding="20" VerticalOptions="Center" HorizontalOptions="CenterAndExpand">
+            <Label Text="Name" Style="{DynamicResource TitleLabelStyle}"/>
+            <Entry x:Name="txtName" Text="{Binding Name}" Placeholder="{Binding Name}"/>
+            <Label Text="owner"  Style="{DynamicResource TitleLabelStyle}"/>
+            <Label x:Name="lblOwner" Text="{Binding Owner}"/>
+            <Label Text="location"  Style="{DynamicResource TitleLabelStyle}"/>
+            <Label x:Name="lblLocation" Text="{Binding Location}"/>
+            <Label Text="created"  Style="{DynamicResource TitleLabelStyle}"/>
+            <Label x:Name="lblDateTime"  Text="{Binding Created}"  Style="{DynamicResource TitleLabelStyle}"/>
+            <Button Text="{Binding CurrentColor}"  BackgroundColor="{Binding CurrentColor}" Command="{Binding ColorSettingCommand}"/>
+            <Button Text="open Location marker in the a maps app (xamarinformsmap bad)" Command="{Binding OpenMaps}"/>
+            <Button Text="start route to this location" Command="{Binding OpenMapsRoute}"/>
+            
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

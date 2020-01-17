@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundColor="{DynamicResource PageBackgroundColor}"
+             x:Class="B4.PE3.VanLookManu.Pages.StartPage">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <On Platform="iOS" Value="0, 20, 0, 0" />
+            <On Platform="Android, UWP" Value="0" />
+        </OnPlatform>
+    </ContentPage.Padding>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="CenterAndExpand" >
+            <Label FontSize="Title" Style="{DynamicResource TitleTextColor}" HorizontalTextAlignment="Center">welcome to location list app</Label>
+
+            <Label Text="The only app you will ever need" HorizontalTextAlignment="Center" HeightRequest="80" Style="{DynamicResource TitleTextColor}">
+                <Label.FontFamily >
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Lobster-Regular" />
+                        <On Platform="Android" Value="Lobster-Regular.ttf#Lobster-Regular" />
+                        <On Platform="UWP" Value="Assets/Fonts/RockSalt-Regular.ttf" />
+                    </OnPlatform>
+                </Label.FontFamily>
+            </Label>
+            <Button Style="{DynamicResource StandardButtonStyle}" Text="Go To UserList" Command="{Binding OpenUsersCommand}"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

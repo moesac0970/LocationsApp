@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:bhv="clr-namespace:B4.PE3.VanLookManu.Behaviors"
+             mc:Ignorable="d"
+             BackgroundColor="{DynamicResource PageBackgroundColor}"
+             Title="Locations "
+             x:Class="B4.PE3.VanLookManu.Pages.LocationsPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Priority="1" Order="Primary" 
+                     Command="{Binding NewLocationCommand}"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand">
+            <ListView ItemsSource="{Binding Locations}"
+                    HasUnevenRows="False" RowHeight="60"
+                       >
+                <ListView.Behaviors>
+                    <bhv:EventToCommandBehavior 
+                        EventName="ItemTapped"  
+                        Command="{Binding OpenUserLocationCommand}"
+                        CommandParameter="{Binding .}"
+                       />
+                </ListView.Behaviors>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout StyleClass="listitem" BackgroundColor="{Binding Color} ">
+                                <Label Text="{Binding Name}"  BackgroundColor="LightGray"  VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

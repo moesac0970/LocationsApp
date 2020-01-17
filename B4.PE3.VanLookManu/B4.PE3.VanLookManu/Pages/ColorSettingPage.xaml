@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundColor="{DynamicResource PageBackgroundColor}"
+             xmlns:bhv="clr-namespace:B4.PE3.VanLookManu.Behaviors"
+             Title="Color setting"
+             x:Class="B4.PE3.VanLookManu.Pages.ColorSettingPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView ItemsSource="{Binding Colors}"
+                    HasUnevenRows="False" RowHeight="60">
+                <ListView.Behaviors>
+                    <bhv:EventToCommandBehavior 
+                        EventName="ItemTapped"  
+                        Command="{Binding SelectedColor}"
+                        CommandParameter="{Binding .}"
+                       />
+                </ListView.Behaviors>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout StyleClass="listitem" BackgroundColor="{Binding Name}">
+                                <Label Text="{Binding Name}" TextColor="White" BackgroundColor="DarkGray" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

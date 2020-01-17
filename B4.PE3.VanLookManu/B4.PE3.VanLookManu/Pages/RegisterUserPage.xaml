@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundColor="{DynamicResource PageBackgroundColor}"
+             Title="Register a user"
+             x:Class="B4.PE3.VanLookManu.Pages.RegisterUserPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Priority="1" Order="Primary" 
+                     Command="{Binding SaveUserCommand}"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Name"/>
+            <Entry Placeholder="enter a name" Text="{Binding Name}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

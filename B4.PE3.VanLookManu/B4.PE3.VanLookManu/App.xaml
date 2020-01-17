@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="B4.PE3.VanLookManu.App">
+    <Application.Resources>
+        <!-- colors -->
+        <Color x:Key="PageBackgroundColor">#add8e6</Color>
+        
+        <Color x:Key="StandardButtonTextColor">#fef3cd</Color>
+        <Color x:Key="StandardButtonBackColor">#f67d15</Color>
+        <Style x:Key="StandardButtonStyle" TargetType="Button">
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+            <Setter Property="TextColor" Value="{StaticResource StandardButtonTextColor}" />
+            <Setter Property="BackgroundColor" Value="{StaticResource StandardButtonBackColor}" />
+        </Style>
+        
+        <!-- ContentPage Style -->
+
+        <Color x:Key="TitleTextColor">#003333</Color>
+
+        <Style x:Key="TitleLabelStyle" TargetType="Label">
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand" />
+            <Setter Property="TextColor" Value="{StaticResource TitleTextColor}" />
+            <Setter Property="FontSize" Value="Medium"/>
+        </Style>
+
+
+        <OnPlatform x:Key="PlatformContentPagePadding" x:TypeArguments="Thickness">
+            <On Platform="iOS">5, 20, 5, 5</On>
+            <On Platform="Android">5, 0, 5, 0</On>
+            <On Platform="Windows">5, 0, 5, 0</On>
+        </OnPlatform>
+    </Application.Resources>
+</Application>
